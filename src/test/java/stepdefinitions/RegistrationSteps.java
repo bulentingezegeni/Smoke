@@ -10,6 +10,7 @@ import utilities.Driver;
 
 public class RegistrationSteps {
 
+
     RegistrationPage registrationPage =new RegistrationPage();
     Faker faker=new Faker();
 

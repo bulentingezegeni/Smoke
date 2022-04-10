@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
     public void setUp(){
         System.out.println("Before Hooks");

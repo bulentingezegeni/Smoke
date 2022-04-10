@@ -4,8 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class ConfigurationReader {
-    //    This class will ONLY be used for getting the data(test data) from
-//    configuration.properties file
+
 
     private static Properties properties;
 

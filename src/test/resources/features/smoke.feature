@@ -1,5 +1,6 @@
 Feature: Smoke Test
 
+
   @SmokeJenkins
   Scenario: TC08 registering with valid credentials
     Given user is on registration page
@@ -12,3 +13,5 @@ Feature: Smoke Test
     And user provides secondPassword
     When user clicks on register button
     Then user verifies the success message as "Registration Saved"
+
+
