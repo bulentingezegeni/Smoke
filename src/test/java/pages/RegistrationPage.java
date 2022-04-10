@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
 public class RegistrationPage {
 
     public RegistrationPage() {
@@ -39,21 +37,5 @@ public class RegistrationPage {
 
     @FindBy(xpath = "//*[text()='Registration Saved']")
     public WebElement successMessage;
-
-    @FindBy(xpath = "//*[@class='invalid-feedback']")
-    public WebElement errorMessage;
-
-    @FindBy(xpath = "//*[@class='invalid-feedback']")
-    public List<WebElement> errorMessageList;
-
-    @FindBy(id = "details-button")
-    public WebElement advancedButton;
-
-    @FindBy(id = "proceed-link")
-    public WebElement proceedButton;
-
-
-
-
 
 }

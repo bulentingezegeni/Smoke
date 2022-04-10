@@ -4,8 +4,6 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import pages.RegistrationPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -15,6 +13,10 @@ public class RegistrationSteps {
     RegistrationPage registrationPage =new RegistrationPage();
     Faker faker=new Faker();
 
+    @Given("user is on registration page")
+    public void userIsOnRegistrationPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
+    }
 
     @Given("user enters ssn number")
     public void user_enters_ssn_number() {
@@ -38,7 +40,6 @@ public class RegistrationSteps {
 
     @Given("user provides username")
     public void user_provides_username() {
-        //String username=registrant.getFirstname()+registrant.getLastname();
         String username=faker.name().username();
         Driver.waitAndSendText(registrationPage.usernameTextbox,username);
     }
@@ -68,40 +69,5 @@ public class RegistrationSteps {
         Assert.assertTrue(Driver.waitForVisibility(registrationPage.successMessage,3).isDisplayed());
     }
 
-    @Given("user enters ssn number as {string}")
-    public void user_enters_ssn_number_as(String string) {
-        registrationPage.ssnTextbox.sendKeys(string);
-    }
 
-    @Then("user verifies the error message as {string}")
-    public void user_verifies_the_error_message_as(String string) {
-        Driver.wait(2);
-        Assert.assertTrue(registrationPage.errorMessage.getText().contains(string));
-    }
-
-    @Given("user enters firstname as {string}")
-    public void user_enters_firstname_as(String string) {
-        registrationPage.firstnameTextbox.sendKeys(string);
-    }
-
-    @Given("user enters lastname as {string}")
-    public void user_enters_lastname_as(String string) {
-        registrationPage.lastnameTextbox.sendKeys(string);
-    }
-
-    @Then("user verifies {string} is valid")
-    public void user_verifies_is_valid(String string) {
-        Assert.assertTrue(registrationPage.errorMessageList.size() == 0);
-    }
-
-    @Given("user proceeds to the next field")
-    public void user_proceeds_to_the_next_field() {
-        new Actions(Driver.getDriver()).sendKeys(Keys.TAB).perform();
-    }
-
-
-    @Given("user is on registration page")
-    public void userIsOnRegistrationPage() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
-    }
 }
