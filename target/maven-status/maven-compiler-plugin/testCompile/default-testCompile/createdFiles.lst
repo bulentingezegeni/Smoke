@@ -1,0 +1,7 @@
+utilities/Driver.class
+Hooks/Hooks.class
+runners/SmokeTestRunner.class
+pages/RegistrationPage.class
+utilities/Driver$1.class
+stepdefinitions/RegistrationSteps.class
+utilities/ConfigurationReader.class

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="17.058">
+    <testcase classname="Smoke Test" name="TC08 registering with valid credentials" time="16.728">
+        <system-out>
+            <![CDATA[Given user is on registration page..........................................passed
+And user enters ssn number..................................................passed
+And user enters firstname...................................................passed
+And user enters lastname....................................................passed
+And user provides username..................................................passed
+And user provides email.....................................................passed
+And user provides firstPassword.............................................passed
+And user provides secondPassword............................................passed
+When user clicks on register button.........................................passed
+Then user verifies the success message as "Registration Saved"..............passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
